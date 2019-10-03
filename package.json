@@ -1,5 +1,5 @@
 {
-  "name": "@nodert-win10/nodert-streams",
+  "name": "nodert-streams",
   "version": "0.2.5",
   "description": "Turn WinRT streams to node.js streams",
   "main": "index.js",
@@ -12,8 +12,8 @@
     "Streams"
   ],
   "dependencies": {
-	"nan" : "latest",
-    "@nodert-win10/windows.storage.streams" : "*"
+    "nan": "latest",
+    "windows.storage.streams": "file:../windows.storage.streams"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/NodeRT/nodert-streams",
   "author": "saary",
-  "contributors": ["nadavbar <nadavbar@gmail.com> (http://www.nadavos.com)"],
+  "contributors": [
+    "nadavbar <nadavbar@gmail.com> (http://www.nadavos.com)"
+  ],
   "gypfile": true,
   "license": "Apache-2.0"
 }
