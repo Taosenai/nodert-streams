@@ -26,7 +26,7 @@ function InputStream(source, options) {
 
   // source is a winrt iinputstream, such as a socket or file
   this._source = source;
-  this._buffer = new Buffer(options.highWaterMark);
+  this._buffer = Buffer.alloc(options.highWaterMark);
 }
 
 InputStream.prototype._read = function(n) {
@@ -40,7 +40,7 @@ InputStream.prototype._read = function(n) {
         return self.emit('error', err);
       };
       if (ibufferFinal && ibufferFinal.length > 0) {
-        var target = new Buffer(ibufferFinal.length);
+        var target = Buffer.alloc(ibufferFinal.length);
         self._buffer.copy(target, 0, 0, ibufferFinal.length);
         self.push(target);
       }
